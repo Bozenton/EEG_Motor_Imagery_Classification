@@ -131,7 +131,6 @@ dmypy.json
 *.edf
 *.pt
 *.pth
-*.csv
 
 .idea/
 

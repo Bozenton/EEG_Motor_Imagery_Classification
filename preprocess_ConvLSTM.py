@@ -10,13 +10,13 @@ import mne
 from utils.transform_to_standard import transform_to_standard
 
 # Config
-edf_dir = './data/edf'
+edf_dir = '/home/featurize/data'
 train_dir = './data/train/'
 test_dir = './data/test/'
 val_dir = './data/val/'
 subfix = '.edf'
 file_name_format = 'S%03dR%02d'
-NUM_SUBJECTS = 1
+NUM_SUBJECTS = 2
 RUNS = [4, 8, 12]  # runs of task 2: imagine opening and closing left or right fist
 sample_freq = 160
 power_line_freq = 60
