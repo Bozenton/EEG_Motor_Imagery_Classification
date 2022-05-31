@@ -115,7 +115,7 @@ class ConvLSTM(nn.Module):
         x = self.fc1_drop(x)
         x = self.fc2(x)
 
-        x = self.sm(x)
+        # x = self.sm(x)
 
         return x
 

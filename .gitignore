@@ -131,6 +131,7 @@ dmypy.json
 *.edf
 *.pt
 *.pth
+*.npy
 
 .idea/
 

@@ -98,7 +98,7 @@ class ResCNN(torch.nn.Module):
 
         # Second Fully Connected Layer
         z = self.fc2(z)
-        z = self.sm(z)
+        # z = self.sm(z)
 
         return z
 

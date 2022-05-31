@@ -12,10 +12,10 @@ from Models.ResCNN.EegDataset import EegDataset
 
 writer = SummaryWriter('ResCNN_tensorboard')
 
-batch_size = 8
+batch_size = 32
 lr = 1e-4
-epochs = 5
-dropout_p = 0.5
+epochs = 50
+dropout_p = 0.4
 
 train_dir = './data/train'
 val_dir = './data/val'
@@ -23,13 +23,18 @@ train_data_file = 'train_data.pt'
 train_label_file = 'train_label.pt'
 val_data_file = 'val_data.pt'
 val_label_file = 'val_label.pt'
+
 save_path = './Models/ResCNN/weights/ResNet.pth'
+if not os.path.exists('./Models/ResCNN/weights/'):
+    os.system('mkdir -p ./Models/ResCNN/weights/')
+
+
 
 if __name__ == '__main__':
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print("Using {} device".format(device))
-    # num_workers = min([os.cpu_count(), batch_size if batch_size > 1 else 0, 8])
-    num_workers = 0
+    num_workers = min([os.cpu_count(), batch_size if batch_size > 1 else 0, 8])
+    # num_workers = 0
     print("Using {} dataloader workers every process".format(num_workers))
 
     train_dataset = EegDataset(os.path.join(train_dir, train_data_file),

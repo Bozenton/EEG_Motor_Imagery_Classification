@@ -12,10 +12,10 @@ from Models.ConvLSTM.EegDataset import EegDataset
 
 writer = SummaryWriter('ConvLSTM_tensorboard')
 
-batch_size = 8
+batch_size = 128
 lr = 1e-4
-epochs = 5
-dropout_p = 0.5
+epochs = 50
+dropout_p = 0.4
 
 train_dir = './data/train'
 val_dir = './data/val'
@@ -23,7 +23,10 @@ train_data_file = 'train_data_ConvLSTM.pt'
 train_label_file = 'train_label_ConvLSTM.pt'
 val_data_file = 'val_data_ConvLSTM.pt'
 val_label_file = 'val_label_ConvLSTM.pt'
+
 save_path = './Models/ConvLSTM/weights/ConvLSTM.pth'
+if not os.path.exists('./Models/ConvLSTM/weights/'):
+    os.system('mkdir -p ./Models/ConvLSTM/weights/')
 
 if __name__ == '__main__':
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
