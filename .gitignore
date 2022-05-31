@@ -138,9 +138,5 @@ dmypy.json
 ResCNN_tensorboard/
 ConvLSTM_tensorboard/
 
-data/edf/
-data/train/
-data/val/
-data/test/
 Models/ConvLSTM/weights/
 Models/ResCNN/weights/
