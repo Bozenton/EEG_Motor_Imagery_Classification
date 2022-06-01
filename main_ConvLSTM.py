@@ -15,7 +15,6 @@ writer = SummaryWriter('ConvLSTM_tensorboard')
 batch_size = 128
 lr = 1e-4
 epochs = 50
-dropout_p = 0.4
 
 train_dir = './data/train'
 val_dir = './data/val'
