@@ -3,7 +3,7 @@ import argparse
 import numpy as np
 import seaborn as sns
 
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, f1_score, precision_score, recall_score
 import matplotlib.pyplot as plt 
 import matplotlib as mpl
 
@@ -26,7 +26,9 @@ if __name__ == '__main__':
     labels = np.load(label_file).astype(np.float32)
     predicts = np.load(pred_file).astype(np.float32)
 
-    print("The precision is", np.sum(predicts==labels)/len(labels))
+    print("The precision is", precision_score(labels, predicts, average='micro'))
+    print('The recall is', recall_score(labels, predicts, average='macro'))
+    print('The F1 score is', f1_score(labels, predicts, average='macro'))
 
     # Set photo parameters
     mpl.rcParams['font.sans-serif'] = 'Times New Roman'
